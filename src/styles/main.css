@@ -1,0 +1,894 @@
+/* Base styles */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #e74c3c;
+  --accent-color: #3498db;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --light-text: #f8f9fa;
+  --border-color: #ddd;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Header */
+header {
+  background-color: white;
+  color: var(--primary-color);
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-color);
+}
+
+/* Intro Section */
+#intro {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.intro-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tax-list {
+  list-style: none;
+  margin: 2rem 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.tax-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid var(--secondary-color);
+  background-color: rgba(231, 76, 60, 0.05);
+}
+
+.highlight {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin: 2rem 0;
+}
+
+/* CTA Buttons */
+.cta-container {
+  margin: 2rem 0;
+}
+
+.cta-button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow);
+}
+
+.cta-button.secondary {
+  background-color: var(--accent-color);
+}
+
+.cta-button.secondary:hover {
+  background-color: #2980b9;
+}
+
+/* Calculator Section */
+#calculator {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.form-step {
+  margin: 2rem 0;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  text-align: left;
+}
+
+.form-section {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2rem;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+}
+
+.view-results-container {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.view-results-link {
+  display: inline-block;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.view-results-link:hover {
+  background-color: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow);
+}
+
+.form-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.form-section h3 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label, .form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1.05rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: #fff;
+}
+
+input::placeholder {
+  color: #aaa;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Rent payment section styling */
+.rent-payment-section {
+  padding: 20px;
+  border-left: 4px solid var(--accent-color);
+  background-color: rgba(52, 152, 219, 0.1);
+  margin: 15px 0 25px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Rent input styling */
+.rent-input,
+input[name="monthlyRent"] {
+  border: 2px solid var(--accent-color) !important;
+  background-color: #fff !important;
+  font-size: 1.2rem !important;
+  padding: 12px 15px !important;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15) !important;
+  display: block !important;
+  width: 100% !important;
+  margin-bottom: 10px !important;
+  height: auto !important;
+}
+
+/* Special styling for rent input placeholder */
+input[name="monthlyRent"]::placeholder {
+  color: #666 !important;
+  opacity: 1 !important;
+  font-style: italic !important;
+}
+
+/* Make rent label more prominent */
+.rent-payment-section label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  display: block !important;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield; /* Standard */
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input.error, select.error {
+  border-color: var(--secondary-color);
+  background-color: rgba(231, 76, 60, 0.05);
+}
+
+input.read-only {
+  background-color: rgba(52, 152, 219, 0.05);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  font-weight: bold;
+  cursor: default;
+}
+
+/* Help text for form fields */
+.help-text {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.3rem;
+  font-style: italic;
+}
+
+/* Tax Summary Section */
+.tax-summary {
+  background-color: rgba(52, 152, 219, 0.05);
+  border-left: 3px solid var(--accent-color);
+  padding: 0.6rem 0.8rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.tax-summary p {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.tax-bracket-label {
+  font-weight: 600;
+  color: var(--accent-color);
+  padding: 2px 6px;
+  background-color: rgba(52, 152, 219, 0.1);
+  border-radius: 3px;
+}
+
+.tax-amount {
+  color: var(--primary-color);
+  font-size: 0.85rem;
+}
+
+.tax-rate {
+  color: #666;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* Input group for inputs with buttons */
+.input-group {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input {
+  flex: 1;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.lookup-button, #calculate-income-btn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.lookup-button:hover, #calculate-income-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Lookup message styles */
+.lookup-message {
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.lookup-message.error {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-left: 3px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.lookup-message.success {
+  background-color: rgba(39, 174, 96, 0.1);
+  border-left: 3px solid var(--success-color);
+  color: var(--success-color);
+}
+
+.lookup-message.info {
+  background-color: rgba(52, 152, 219, 0.1);
+  border-left: 3px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* Email section styling */
+.email-section {
+  background-color: rgba(52, 152, 219, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.send-report-btn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.send-report-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Results Section */
+#results {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.results-summary {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.result-card {
+  flex: 1;
+  min-width: 250px;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+/* Tax Type Summary */
+.tax-type-summary {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.tax-type-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.tax-type-card {
+  flex: 1;
+  min-width: 250px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+}
+
+.tax-type-card.direct {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-left: 4px solid #e74c3c;
+}
+
+.tax-type-card.indirect {
+  background-color: rgba(52, 152, 219, 0.1);
+  border-left: 4px solid #3498db;
+}
+
+.tax-type-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.tax-type-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.amount {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin: 1rem 0;
+}
+
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.chart-wrapper {
+  flex: 1;
+  min-width: 300px;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.insight-box {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+#insight-amount {
+  color: var(--warning-color);
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: white;
+  color: var(--text-color);
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-logo {
+  max-width: 100px;
+  height: auto;
+  margin: 0.5rem auto 1rem;
+}
+
+/* Live Tax Percentage Display */
+.live-tax-container {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-top: 0;
+  border-bottom: 2px solid var(--secondary-color);
+  transition: box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.live-tax-container.floating {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  border-radius: 0 0 8px 8px;
+}
+
+.live-tax-container.compact-mode {
+  padding: 10px 20px;
+}
+
+.tax-display-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.tax-display-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.toggle-icon {
+  font-size: 12px;
+  transition: transform 0.3s;
+}
+
+.toggle-icon.collapsed {
+  transform: rotate(180deg);
+}
+
+.tax-display-content {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 200px;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.tax-display-content.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+.tax-display-compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tax-display-compact.hidden {
+  display: none;
+}
+
+.compact-meter {
+  width: 100px;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  margin-right: 15px;
+}
+
+.compact-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.compact-value {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tax-meter-container {
+  margin-bottom: 20px;
+}
+
+.tax-meter {
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.tax-meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50 0%, #FFEB3B 50%, #F44336 100%);
+  width: 0%; /* Will be updated via JS */
+  transition: width 0.5s ease-out;
+}
+
+.tax-meter-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+}
+
+.tax-stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tax-stat {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px;
+  text-align: center;
+}
+
+.tax-stat .label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.tax-stat .amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.tax-stat .amount.highlight {
+  color: #F44336;
+}
+
+.tax-stat .amount.warning {
+  color: #FFA500;
+}
+
+.tax-stat .amount.standard {
+  color: var(--secondary-color);
+}
+
+/* Style for negative values */
+.negative {
+  color: #e74c3c !important; /* Red color for negative values */
+  font-weight: bold;
+}
+
+/* Income Calculator Popup */
+.calculator-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.calculator-popup.hidden {
+  display: none;
+}
+
+.popup-content {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.popup-header h3 {
+  margin: 0;
+  color: white;
+}
+
+.close-popup {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.popup-body {
+  padding: 20px;
+}
+
+.calculation-result {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: rgba(52, 152, 219, 0.1);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 4px;
+}
+
+.calculation-result.hidden {
+  display: none;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.result-row:last-child {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.result-label {
+  color: var(--primary-color);
+}
+
+.result-value {
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.popup-actions button {
+  flex: 1;
+}
+
+#calculate-income-btn {
+  display: inline-block;
+}
+
+/* Notification System */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 1100;
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.notification.success {
+  background-color: var(--success-color);
+}
+
+.notification.error {
+  background-color: var(--secondary-color);
+}
+
+.notification.info {
+  background-color: var(--accent-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .results-summary, .charts-container {
+    flex-direction: column;
+  }
+
+  .tax-list li {
+    font-size: 1rem;
+  }
+
+  .tax-stat {
+    min-width: 100px;
+  }
+
+  .tax-stat .amount {
+    font-size: 18px;
+  }
+}

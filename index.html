@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="UK Tax Footprint Calculator - Discover your total tax contribution over the past 5 years and estimate the next 5 years">
+    <title>UK Tax Footprint Calculator</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <img src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1746971361/20250511_1446_Footprint_Logo_remix_01jtzsfn4zfzpabdmmnv0dz29q_skcrct.png" alt="Tax Footprint Calculator Logo" class="logo">
+        <h1>You Are the Product in GDP</h1>
+        <p class="tagline">Discover how much tax you've really paid over the past 5 years, and what you'll pay in the next 5.</p>
+      </div>
+    </header>
+
+    <main>
+      <section id="intro" class="container">
+        <div class="intro-content">
+          <h2>The government doesn't print value—you create it.</h2>
+          <p>Every pound you earn, spend, or get taxed on drives the economy forward... and gets sliced from every angle.</p>
+
+          <ul class="tax-list">
+            <li>Your labour = GDP</li>
+            <li>Your spending = VAT</li>
+            <li>Your energy = duty + green levies</li>
+            <li>Your insurance = premium tax</li>
+            <li>Your TV = licence + VAT</li>
+            <li>Your home = council tax + stamp duty</li>
+            <li>Your food, fuel, fun = excise duty</li>
+          </ul>
+
+          <p class="highlight">And it's all counted as growth.</p>
+
+          <div class="cta-container">
+            <button id="start-calculator" class="cta-button">Estimate Your Tax Footprint</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="calculator" class="container hidden">
+        <h2>Your Tax Footprint Calculator</h2>
+        <p>Answer a few simple questions to see your total tax contribution. No data is stored - all calculations happen in your browser.</p>
+
+        <!-- Live Tax Percentage Display -->
+        <div id="live-tax-display" class="live-tax-container">
+          <div class="tax-display-header">
+            <h4>Your Tax Footprint</h4>
+            <button id="toggle-tax-display" class="toggle-button" aria-label="Toggle tax display">
+              <span class="toggle-icon">▲</span>
+            </button>
+          </div>
+
+          <div id="tax-display-content" class="tax-display-content">
+            <div class="tax-meter-container">
+              <div class="tax-meter">
+                <div id="tax-meter-fill" class="tax-meter-fill" style="width: 0%;"></div>
+              </div>
+              <div class="tax-meter-labels">
+                <span>0%</span>
+                <span>25%</span>
+                <span>50%</span>
+                <span>75%</span>
+                <span>100%</span>
+              </div>
+            </div>
+            <div class="tax-stats">
+              <div class="tax-stat">
+                <span class="label">Estimated Tax:</span>
+                <span id="live-tax-amount" class="amount">£0</span>
+              </div>
+              <div class="tax-stat">
+                <span class="label">Of Your Income:</span>
+                <span id="live-tax-percentage" class="amount highlight">0%</span>
+              </div>
+              <div class="tax-stat">
+                <span class="label">Take-Home:</span>
+                <span id="live-income-remaining" class="amount">£0</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Compact version shown when scrolling -->
+          <div id="tax-display-compact" class="tax-display-compact hidden">
+            <div class="compact-meter">
+              <div id="compact-meter-fill" class="tax-meter-fill" style="width: 0%;"></div>
+            </div>
+            <div class="compact-stats">
+              <span id="compact-percentage" class="compact-value highlight">0%</span>
+              <span>of income goes to tax</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="form-container">
+          <!-- Form content will be loaded here -->
+          <div id="form-content" class="form-step active">
+            <!-- Form content will be loaded from JS -->
+          </div>
+
+          <!-- View detailed results link -->
+          <div class="view-results-container">
+            <a href="#" id="view-detailed-results" class="view-results-link">View Detailed Results</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="container hidden">
+        <h2>Your Tax Footprint Results</h2>
+
+        <div class="results-summary">
+          <div class="result-card">
+            <h3>Past 5 Years</h3>
+            <div class="amount" id="past-total">£0</div>
+            <p>Total tax paid</p>
+          </div>
+
+          <div class="result-card">
+            <h3>Next 5 Years</h3>
+            <div class="amount" id="future-total">£0</div>
+            <p>Projected tax</p>
+          </div>
+
+          <div class="result-card">
+            <h3>Effective Rate</h3>
+            <div class="amount" id="effective-rate">0%</div>
+            <p>Of your income</p>
+          </div>
+        </div>
+
+        <div class="tax-type-summary">
+          <h3>Direct vs Indirect Taxes</h3>
+          <div class="tax-type-cards">
+            <div class="tax-type-card direct">
+              <h4>Direct Taxes</h4>
+              <div class="amount" id="direct-tax-total">£0</div>
+              <p><span id="direct-tax-percentage">0%</span> of total tax</p>
+              <p class="tax-type-description">Taxes you pay directly (e.g., Income Tax, Council Tax)</p>
+            </div>
+
+            <div class="tax-type-card indirect">
+              <h4>Indirect Taxes</h4>
+              <div class="amount" id="indirect-tax-total">£0</div>
+              <p><span id="indirect-tax-percentage">0%</span> of total tax</p>
+              <p class="tax-type-description">Taxes hidden in prices (e.g., VAT, Fuel Duty)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="charts-container">
+          <div class="chart-wrapper">
+            <h3>Tax Breakdown</h3>
+            <canvas id="tax-breakdown-chart"></canvas>
+          </div>
+
+          <div class="chart-wrapper">
+            <h3>Direct vs Indirect</h3>
+            <canvas id="tax-type-chart"></canvas>
+          </div>
+
+          <div class="chart-wrapper">
+            <h3>10-Year Projection</h3>
+            <canvas id="projection-chart"></canvas>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <h3>Key Insight</h3>
+          <p id="key-insight">You've paid <span id="insight-amount">£0</span> in tax for £0 services rendered directly to you.</p>
+        </div>
+
+        <div class="cta-container">
+          <button id="restart-calculator" class="cta-button">Calculate Again</button>
+          <button id="download-results" class="cta-button secondary">Download Results (PDF)</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <img src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1746971361/20250511_1446_Footprint_Logo_remix_01jtzsfn4zfzpabdmmnv0dz29q_skcrct.png" alt="Tax Footprint Calculator Logo" class="footer-logo">
+        <p>This calculator is for educational purposes only. No data is collected or stored.</p>
+        <p>All calculations are estimates based on current UK tax rates and regulations.</p>
+        <p>&copy; 2025 UK Tax Footprint Calculator</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

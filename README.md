@@ -323,6 +323,7 @@ This project is licensed under the **ISC License** - see the [LICENSE](LICENSE) 
 - Financial Technology (FinTech)
 - Data Visualization
 - JavaScript/TypeScript Development
+- Web Performance Optimization
 
 </div>
 

@@ -19,9 +19,9 @@
 
 ## � Introduction
 
-The **UK Tax Footprint Calculator** is a comprehensive web application that reveals the hidden reality of your total tax contribution to the UK government. Unlike simple income tax calculators, this tool analyzes your complete tax footprint across **17+ different tax categories** including direct taxes (Income Tax, National Insurance) and indirect taxes (VAT, fuel duty, council tax, and more).
+The **UK Tax Footprint Calculator** is a simple web application that reveals the hidden reality of your total tax contribution to the UK government. Unlike simple income tax calculators, this tool analyzes your complete tax footprint across **17+ different tax categories** including direct taxes (Income Tax, National Insurance) and indirect taxes (VAT, fuel duty, council tax, and more).
 
-Built with modern JavaScript and powered by real-time calculations, this tool demonstrates advanced frontend development skills including modular architecture, live data visualization, and complex financial calculations. The application processes sensitive financial data entirely client-side, ensuring complete privacy while delivering professional-grade tax analysis.
+Built with JavaScript and powered by real-time calculations, this tool demonstrates simple but quite advanced frontend development skills including modular architecture, live data visualization, and complex financial calculations being calculated on the fly in the browser. The application processes sensitive financial data entirely client-side, ensuring complete privacy while delivering professional-grade tax analysis.
 
 **Key Technologies:** Vanilla JavaScript (ES6+), Vite build system, Chart.js for data visualization, CSS3 with responsive design, and modular component architecture.
 
@@ -46,13 +46,9 @@ Built with modern JavaScript and powered by real-time calculations, this tool de
 ![Tax Calculator Interface](images/calculator-interface.png)
 *Main calculator interface with live tax meter*
 
-![Results Dashboard](images/results-dashboard.png)
-*Comprehensive results with interactive charts*
 
 ### Live Demo
-🌐 **[View Live Application](https://your-tax-calculator-demo.vercel.app)**
-
-*Note: Replace the demo URL with your actual deployment link*
+🌐 **[View Live Application](https://tax-footprint-calculator.vercel.app/)**
 
 ---
 
@@ -66,7 +62,7 @@ Built with modern JavaScript and powered by real-time calculations, this tool de
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/[YOUR-USERNAME]/tax_footprint_calculator.git
+   git clone https://github.com/Tommybroomhall/tax_footprint_calculator.git
    cd tax_footprint_calculator
    ```
 
@@ -263,7 +259,7 @@ src/js/
 
 We welcome contributions from developers of all skill levels! This project offers excellent opportunities to work with:
 
-- **Financial calculations** and tax logic
+- **Financial calculations** and hidden tax logic 
 - **Data visualization** with Chart.js
 - **Modern JavaScript** (ES6+ modules)
 - **Build tools** and optimization
@@ -295,14 +291,12 @@ We welcome contributions from developers of all skill levels! This project offer
 
 ### Contribution Ideas
 
-- 🆕 **New Tax Types** - Add missing UK taxes
-- 🎨 **UI Improvements** - Enhanced user experience
+- 🆕 **New Tax Types** - Add missing UK taxes (e.g. stamp duty, capital gains)
+- 🎨 **UI Improvements** - Enhanced user experience for actual users
 - 📊 **Visualization** - New chart types or insights
 - 🔧 **Performance** - Optimization opportunities
 - 📱 **Mobile** - Enhanced mobile experience
 - 🧪 **Testing** - Unit tests for calculations
-
-For detailed guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
@@ -320,9 +314,9 @@ This project is licensed under the **ISC License** - see the [LICENSE](LICENSE) 
 
 ### Interested in my work? Let's connect!
 
-[![GitHub](https://img.shields.io/badge/GitHub-[YOUR-USERNAME]-181717?style=for-the-badge&logo=github)](https://github.com/[YOUR-USERNAME])
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-[YOUR-NAME]-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/[YOUR-LINKEDIN])
-[![Email](https://img.shields.io/badge/Email-[YOUR-EMAIL]-D14836?style=for-the-badge&logo=gmail)](mailto:[YOUR-EMAIL])
+[![GitHub](https://img.shields.io/badge/GitHub-[YOUR-USERNAME]-181717?style=for-the-badge&logo=github)](https://github.com/Tommybroomhall)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-[YOUR-NAME]-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/tom-b-80ab43165/)
+[![Email](https://img.shields.io/badge/Email-[YOUR-EMAIL]-D14836?style=for-the-badge&logo=gmail)](mailto:hello@tbroomhall.com)
 
 **🚀 Open to opportunities in:**
 - Full-Stack Development
